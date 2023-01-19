@@ -38,14 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'corsheaders"',
+    'corsheaders',
     'accounts.apps.AccountsConfig',
     'posts.apps.PostsConfig',
 ]
 
 REST_FRAMEWORK = { # new
     "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.AllowAny",
+        "rest_framework.permissions.IsAuthenticated",
      ],
 }
 
