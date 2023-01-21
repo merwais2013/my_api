@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 from environs import Env
 import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -119,7 +120,7 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 # }
 
 DATABASES = {
-    "default": env.dj_db_url("DATABASE_URL") 
+    "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 # Password validation
